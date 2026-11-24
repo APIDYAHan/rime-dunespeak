@@ -1,0 +1,89 @@
+# Rime schema
+# encoding: utf-8
+#
+# 沙丘语输入方案：打拼音，候选直接是《未知伤亡》角色 Dune（沙丘）的说话方式。
+# 词库复用朙月拼音（luna_pinyin），经 t2s 转简体后交给 lua/dune.lua 改写。
+
+schema:
+  schema_id: dunespeak
+  name: 沙丘语·Dune
+  version: "1.0"
+  author:
+    - DuneSpeak CN
+  description: |
+    打拼音，直接输出《未知伤亡》角色沙丘 [SAW-12] 的说话方式。
+    词库来自游戏原版 594 条台词。Ctrl+` 可切回普通输入法。
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: simplification
+    reset: 1
+    states: [ 漢字, 汉字 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+  filters:
+    - simplifier
+    - uniquifier
+    - lua_filter@*dune
+
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"
+  algebra:
+    __patch:
+      - pinyin:/abbreviation
+      - pinyin:/spelling_correction
+      - pinyin:/key_correction
+
+translator:
+  dictionary: luna_pinyin
+  enable_sentence: true
+  enable_completion: true
+  enable_user_dict: true
+  spelling_hints: 5
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+
+simplifier:
+  opencc_config: t2s.json
+  option_name: simplification
+  tips: all
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+
+# 沙丘语转换参数：1 = 只换词，2 = 换词+断字+拟声词（默认），3 = 最重口吃
+dune:
+  strength: 2

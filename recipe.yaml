@@ -1,0 +1,19 @@
+# recipe.yaml - plum (东风破) 安装配方
+# https://github.com/rime/plum
+#
+# 安装命令（发布到 GitHub 后）:
+#   rime-install <你的GitHub用户名>/rime-dunespeak
+#
+# 说明: plum 默认只拷贝 *.yaml / *.txt / *.gram / opencc/*，
+# 不会安装 lua 脚本，也不处理 .custom.yaml，所以这里用 recipe 显式列出。
+
+recipe:
+  Rx: default
+  description: >-
+    沙丘语输入法 —— 把候选词改写成《未知伤亡》角色 Dune（沙丘 [SAW-12]）的说话方式。
+    安装完成后请在输入法的「方案选单」中勾选启用「沙丘语」。
+
+install_files: >-
+  dunespeak.schema.yaml
+  dunespeak.custom.yaml
+  lua/dune.lua
