@@ -15,17 +15,25 @@ RIME 输入方案。词库来自游戏官方中文语言文件中 594 条原版�
 
 | 你的情况 | 用哪个 | 难度 |
 |---|---|---|
-| 没装过小狼毫 | `小狼毫_沙丘语定制安装器.exe` | 双击装完就好 |
-| 已经装着官方小狼毫 | `沙丘语方案添加包.zip` | 双击 bat，点两下 |
+| 没装过小狼毫 | `DuneSpeak-Custom-Installer-0.17.4.exe`（沙丘语定制安装器） | 双击装完就好 |
+| 已经装着官方小狼毫 | `DuneSpeak-Schema-AddPack.zip`（沙丘语方案添加包） | 双击 bat，点两下 |
 | 会用 Rime / plum | 本仓库源码 | `rime-install` 一条命令 |
 
 > 仓库本体只放方案文件（yaml + lua），安装器、添加包、安装器源码都是 Releases 附件。
+> 注：GitHub 附件不支持中文文件名，所以下载到的文件是英文名，对照如下。
+> 下载后可用 `Get-FileHash 文件名` 核对指纹，确认是原包：
+
+| 文件 | SHA256 |
+|---|---|
+| `DuneSpeak-Custom-Installer-0.17.4.exe` | `C3AA5C2455EC260C589A09E5845672F63EB8682305877763B1282228572BA14F` |
+| `DuneSpeak-Schema-AddPack.zip` | `C3F3A66C345FECF783F6E1CC58EE27225EAED83E8D38B433280CB8C86FD53B5C` |
+| `DuneSpeak-Installer-Source.zip` | `2A26ED3909C7585D1E1C5FF9225AC6A2A0250B90BC32D8414915F47B98FCDA07` |
 
 ## 安装
 
 ### 方式一：定制安装器（推荐，全新安装）
 
-1. 到 Releases 下载 `小狼毫_沙丘语定制安装器.exe`；
+1. 到 Releases 下载 `DuneSpeak-Custom-Installer-0.17.4.exe`（沙丘语定制安装器）；
 2. 装过旧版小狼毫的，先卸载干净；
 3. 双击安装器，选好安装位置，一路「下一步」；
 4. 走到「方案选单设定」窗口，第一项「沙丘语·Dune」已默认勾选，直接点「确定」
@@ -36,7 +44,7 @@ RIME 输入方案。词库来自游戏官方中文语言文件中 594 条原版�
 
 ### 方式二：添加包（已经装着官方小狼毫）
 
-1. 到 Releases 下载 `沙丘语方案添加包.zip` 并解压；
+1. 到 Releases 下载 `DuneSpeak-Schema-AddPack.zip`（沙丘语方案添加包）并解压；
 2. 双击 `添加沙丘语.bat`，点「添加沙丘语方案」；
 3. 在弹出的官方窗口里勾「沙丘语·Dune」，点「确定」；
 4. 回到向导点「检查是否添加成功」，看到「沙丘语已启用」就成了。
