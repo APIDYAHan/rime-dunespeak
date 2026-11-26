@@ -21,6 +21,10 @@ https://github.com/APIDYAHan/rime-dunespeak/releases/latest
   C3F3A66C345FECF783F6E1CC58EE27225EAED83E8D38B433280CB8C86FD53B5C
   DuneSpeak-Installer-Source.zip
   2A26ED3909C7585D1E1C5FF9225AC6A2A0250B90BC32D8414915F47B98FCDA07
+  DuneSpeak-Mobile-CyIME.zip（安卓手机版，见「五」）
+  ED37E82ACEB6F916FED10E400737F6C30C028465259BA8F05052CC573AFA05A0
+  DuneSpeak-Mobile-Trime.zip（安卓手机版，见「五」）
+  9C2E889747CF3274588177F412923E2BF3D8A064778E7E985D1C9B386ADB8EA4
 
 
 一、定制安装器（推荐，全新安装）
@@ -69,6 +73,25 @@ https://github.com/APIDYAHan/rime-dunespeak/releases/latest
 4. 重新部署。
 
 
+五、新追加的手机方案（安卓）
+----------------------------------------
+手机上没有小狼毫，用的是安卓输入法方案包（Releases 里的两个 Mobile zip），
+按你装的输入法二选一：
+
+· CyIME 输入法（推荐，导入即用）
+  下载 DuneSpeak-Mobile-CyIME.zip，把 zip 原样传到手机（不要解压），
+  在 CyIME 里：设置 → 扩展 → 方案 → 右上角「已安装」→「导入方案」。
+  详细步骤和排错见仓库「手机版/安装说明_CyIME.txt」。
+
+· 同文输入法 Trime（已在用同文的选这个）
+  下载 DuneSpeak-Mobile-Trime.zip，解压后把三个文件放进手机
+  内部存储的 rime 文件夹（dune.lua 要放在 rime/lua/ 子目录里），
+  再在同文里「部署」。详细步骤见「手机版/安装说明_同文Trime.txt」。
+
+共同注意：沙丘语是 26 键方案，九键打不了；强度 1/2/3 的调法两份说明里各写了。
+试打 woele，出「咯嗯... 沙—丘 饿—饿...」就是装好了。
+
+
 怎么打字
 ----------------------------------------
 · 想 打      拼音键序
@@ -77,9 +100,11 @@ https://github.com/APIDYAHan/rime-dunespeak/releases/latest
 
 · 分词键是单引号 '（如 xi'an），一般用不上；
 · 打整段英文可按 Shift 切西文模式；
-· 换方案：Ctrl + ` 或 F4；简繁切换：Ctrl + Shift + 4；
+· 换方案：Ctrl + ` 或 F4（电脑快捷键；手机在输入法的方案菜单里切）；
+· 简繁切换：Ctrl + Shift + 4；
 · 强度三档：编辑 dunespeak.custom.yaml 里的 dune/strength
   （1 = 只换词汇，2 = 换词 + 断字 + 拟声词【默认】，3 = 加重口吃），改完重新部署。
+  手机上的改法见「五、手机」里对应的安装说明。
 
 
 卸载
