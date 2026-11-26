@@ -1,0 +1,8 @@
+# Rime patch
+# encoding: utf-8
+#
+# 在这里微调沙丘语强度，改完按 F4 或右键小狼毫图标「重新部署」生效。
+# strength: 1 = 只换词汇  2 = 换词 + 断字 + 拟声词（默认）  3 = 加重口吃
+
+patch:
+  "dune/strength": 2
